@@ -11,3 +11,10 @@
 2. prob_solve.py에서 def solve(): 내부에 문제풀이 코드를 적기
 3. $ python answer_check.py를 통해 테스트케이스와 비교하기
 --> 모든 테스트 케이스와 정답이 일치한다면 baekjoon_{number}.py 형태로 정답파일을 만들어줌
+-----
+ex)1025
+prob_generate
+![prob](https://github.com/yeongjinHwang/BOJHelper/assets/83944553/a42840c2-f538-43a9-95b9-87849ce4a49f)
+
+answer_check
+![image](https://github.com/yeongjinHwang/BOJHelper/assets/83944553/25d625a2-a289-4f7a-8180-b9d8999803a3)
