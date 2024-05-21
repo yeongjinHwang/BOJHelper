@@ -36,7 +36,7 @@ def fetch_problem_details(problem_number):
     info = {label: info_table.find_all('td')[i].text.strip() for i, label in enumerate(info_labels)}
 
     # 파일로 저장
-    with open(f"problem_{problem_number}.txt", 'w', encoding='utf-8') as file:
+    with open(f"/problem/problem_{problem_number}.txt", 'w', encoding='utf-8') as file:
         file.write(f"Title: {title}\n\n")
         file.write("Additional Information:\n")
         for key, value in info.items():
