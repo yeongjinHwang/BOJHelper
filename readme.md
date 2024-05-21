@@ -22,12 +22,10 @@
 6. 문제 번호 없이 문제 난이도 기준으로 뽑아올 수 있게 하기
 -----
 
-### ex)1025
-</br>
-prob_generate
-</br>
+# Example 1025
+
+## prob_generate
 ![prob](https://github.com/yeongjinHwang/BOJHelper/assets/83944553/a42840c2-f538-43a9-95b9-87849ce4a49f)
-</br>
-answer_check
-</br>
-![image](https://github.com/yeongjinHwang/BOJHelper/assets/83944553/25d625a2-a289-4f7a-8180-b9d8999803a3)
+
+## answer_check
+![answer_check](https://github.com/yeongjinHwang/BOJHelper/assets/83944553/25d625a2-a289-4f7a-8180-b9d8999803a3)
