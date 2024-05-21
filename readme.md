@@ -13,8 +13,11 @@
 --> 모든 테스트 케이스와 정답이 일치한다면 baekjoon_{number}.py 형태로 정답파일을 만들어줌
 -----
 ex)1025
+</br>
 prob_generate
+</br>
 ![prob](https://github.com/yeongjinHwang/BOJHelper/assets/83944553/a42840c2-f538-43a9-95b9-87849ce4a49f)
-
+</br>
 answer_check
+</br>
 ![image](https://github.com/yeongjinHwang/BOJHelper/assets/83944553/25d625a2-a289-4f7a-8180-b9d8999803a3)
