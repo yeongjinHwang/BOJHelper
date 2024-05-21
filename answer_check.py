@@ -3,7 +3,7 @@ import io
 import sys
 import os
 
-def run_test_case(problem_number, test_input):
+def run_test_case(test_input):
     # Save the test input to a file
     with open("input.txt", "w", encoding='utf-8') as file:
         file.write(test_input)
@@ -62,9 +62,9 @@ def check_solution(problem_number):
             passed_count += 1
         else:
             print(f"Test Case {i+1}: Failed")
-            print(f"Expected Output:\n{expected_output}")
-            print(f"Actual Output:\n{actual_output}")
-            print()
+        print(f"Expected Output:\n{expected_output}")
+        print(f"Actual Output:\n{actual_output}")
+        print()
 
     if passed_count == len(sample_inputs):
         print("모든 테스트 케이스 통과")
