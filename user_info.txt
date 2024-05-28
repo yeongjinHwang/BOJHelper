@@ -1,0 +1,3 @@
+url=<your-github-repo-url>
+id=<your-github-username>
+password=<your-github-password>
