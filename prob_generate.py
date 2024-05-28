@@ -1,3 +1,4 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 
@@ -35,8 +36,13 @@ def fetch_problem_details(problem_number):
     info_labels = ["time_limit", "memory_limit", "submissions", "correct", "user_correct", "accuracy"]
     info = {label: info_table.find_all('td')[i].text.strip() for i, label in enumerate(info_labels)}
 
+    # 디렉토리가 없으면 생성
+    directory = "problem"
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
     # 파일로 저장
-    with open(f"/problem/problem_{problem_number}.txt", 'w', encoding='utf-8') as file:
+    with open(f"{directory}/problem_{problem_number}.txt", 'w', encoding='utf-8') as file:
         file.write(f"Title: {title}\n\n")
         file.write("Additional Information:\n")
         for key, value in info.items():
