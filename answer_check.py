@@ -52,7 +52,7 @@ def check_solution(problem_number):
     passed_count = 0
     for i, sample_input in enumerate(sample_inputs):
         expected_output = sample_outputs[i].strip()
-        actual_output = run_test_case(problem_number, sample_input).strip()
+        actual_output = run_test_case(sample_input).strip()
         
         expected_lines = expected_output.split('\n')
         actual_lines = actual_output.split('\n')
@@ -73,8 +73,35 @@ def check_solution(problem_number):
             code = file.read()
         with open(f'problem/problem_{problem_number}.py', 'w', encoding='utf-8') as file:
             file.write(code)
+        
+        # GitHub에 파일 업로드
+        upload_to_github(problem_number)
+        
     else:
         print("테스트 케이스 중 일부가 실패했습니다.")
+
+def upload_to_github(problem_number):
+    # user_info.txt 파일에서 GitHub URL, 사용자 ID, 비밀번호 읽기
+    with open('user_info.txt', 'r', encoding='utf-8') as file:
+        lines = file.readlines()
+        url = lines[0].strip().split('=')[1]
+        username = lines[1].strip().split('=')[1]
+        password = lines[2].strip().split('=')[1]
+    
+    # GitHub 리포지토리에 push
+    commands = [
+        ['git', 'add', f'problem/problem_{problem_number}.py', f'problem/problem_{problem_number}.txt'],
+        ['git', 'commit', '-m', f"Add problem {problem_number} files"],
+        ['git', 'push', url, f'--repo={username}:{password}@{url}']
+    ]
+    
+    for command in commands:
+        result = subprocess.run(command, capture_output=True, text=True)
+        if result.returncode != 0:
+            print(f"Error: {' '.join(command)} failed with message:\n{result.stderr}")
+            return False
+    print(f"Problem {problem_number} files successfully uploaded to GitHub.")
+    return True
 
 if __name__ == "__main__":
     problem_number = input("Enter the problem number to check: ")
